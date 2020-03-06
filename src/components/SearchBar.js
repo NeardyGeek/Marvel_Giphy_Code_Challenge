@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaChartLine } from 'react-icons/fa';
 
 const SearchBar = (props) => {
     const [query, setQuery] = useState("");
@@ -19,11 +19,16 @@ const SearchBar = (props) => {
         
     }
 
+    const resetQuery = () =>{
+        setQuery();
+    }
+
     return (
         
         <form className = "searchbar">
             <input value = {query} onChange = {handleQueryChanges} type = "text" placeholder = "Find your favorite Gifs..." />
             <button type="submit" onClick = { startQuery }><FaSearch /></button>
+            <button type="submit" onClick = { resetQuery }><FaChartLine /></button>
         </form>
         
 
