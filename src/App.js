@@ -57,7 +57,7 @@ function App() {
 
   const search = query => {
 
-    callback();
+    setGifs([]);
     setQuery(query.replace(/\s/g, '+'));
     console.log('g', gifs);
     
@@ -65,7 +65,7 @@ function App() {
     fetch(url).then(data => data.json()
     ).then(res => {
       
-      callback();
+      
       console.log(res.data);
       console.log(url);
       setGifs(res.data);
@@ -76,17 +76,14 @@ function App() {
 
   }
 
-  const callback = () =>{
-    
-    setGifs([]);
-    //setOffSet(0);
-  }
+  
 
   return (
     <div className="App">
 
       
       <SearchBar search={search} />
+      
       
       <div className = "container">
 
