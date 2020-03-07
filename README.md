@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project had already been deployed on heruko Open [https://gif-digger.herokuapp.com/] to view it without install.
 
 ### Prerequisite
 
