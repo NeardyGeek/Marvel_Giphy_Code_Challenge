@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### initial design for puzzel like Gallery
+
+<img src='gif_digger.gif' title='Video Walkthrough' width='480px' alt='Video Walkthrough' />
