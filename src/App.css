@@ -61,14 +61,16 @@ form button:hover {
 
   }
 
-
+  
+  
 
   .gifcell img {
     
     width: 100% !important;
     height: auto !important;
     object-fit: contain;
-   }
+
+  }
       
     
   
