@@ -10,7 +10,8 @@ import { FaCoffee } from 'react-icons/fa';
 
 
 const key = "6F0AQVV4DddTCWfscHLi29OMxrLohN0i";
-const limit = 16;
+const scrollLimit = 10;
+const firstLimit = 30; // limit for first time uploaded
 
 
 
@@ -26,7 +27,7 @@ function App() {
   
   const fetchGifs = () => {
 
-    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query}&`}api_key=${key}&offset=${offset}&limit=${limit}`;
+    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query}&`}api_key=${key}&offset=${offset}&limit=${scrollLimit}`;
     fetch(url).then(data => data.json()
     ).then(res => {
       
@@ -47,7 +48,20 @@ function App() {
 
   useEffect(() => {
 
-    fetchGifs();
+    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query}&`}api_key=${key}&offset=${offset}&limit=${firstLimit}`;
+    fetch(url).then(data => data.json()
+    ).then(res => {
+      
+      console.log(res.data);
+      console.log(url);
+      setGifs([...gifs, ...res.data]);
+      setLoad(true);
+     
+      setOffSet(offset+25)
+     
+      
+      
+    })
 
   
   }, []);
@@ -61,7 +75,7 @@ function App() {
     setQuery(query.replace(/\s/g, '+'));
     console.log('g', gifs);
     
-    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query.replace(/\s/g, '+')}&`}api_key=${key}&limit=${limit}`;
+    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query.replace(/\s/g, '+')}&`}api_key=${key}&limit=${firstLimit}`;
     fetch(url).then(data => data.json()
     ).then(res => {
       
