@@ -26,7 +26,7 @@ const SearchBar = (props) => {
     return (
         
         <form className = "searchbar">
-            <input value = {query} onChange = {handleQueryChanges} type = "text" placeholder = "Find your favorite Gifs..." />
+            <input value = {query} onChange = {handleQueryChanges} type = "text" placeholder = "Find your desired or trending Gifs..." />
             <button type="submit" onClick = { startQuery }><FaSearch /></button>
             <button type="submit" onClick = { resetQuery }><FaChartLine /></button>
         </form>
