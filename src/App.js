@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-//import './Appv2.css'; this is Giphy home page like css, you can uncomment it to check the effect
+//import './Appv2.css'; //this is Giphy home page like css, you can uncomment it to check the effect
 import SearchBar from "./components/SearchBar";
 import GifGallery from './components/GifGallery';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -93,7 +93,7 @@ function App() {
         hasMore={true}
         loader={
          
-          <div color = "white"><FaCoffee /></div>
+          <div style = {{color: 'white'}}><FaCoffee /></div>
         }>
         
       
