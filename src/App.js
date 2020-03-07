@@ -26,7 +26,7 @@ function App() {
   
   const fetchGifs = () => {
 
-    const url = `http://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query}&`}api_key=${key}&offset=${offset}&limit=${limit}`;
+    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query}&`}api_key=${key}&offset=${offset}&limit=${limit}`;
     fetch(url).then(data => data.json()
     ).then(res => {
       
@@ -61,7 +61,7 @@ function App() {
     setQuery(query.replace(/\s/g, '+'));
     console.log('g', gifs);
     
-    const url = `http://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query.replace(/\s/g, '+')}&`}api_key=${key}&limit=${limit}`;
+    const url = `https://api.giphy.com/v1/gifs/${typeof query === 'undefined' ? "trending?":`search?q=${query.replace(/\s/g, '+')}&`}api_key=${key}&limit=${limit}`;
     fetch(url).then(data => data.json()
     ).then(res => {
       
