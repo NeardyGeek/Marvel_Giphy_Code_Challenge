@@ -36,7 +36,7 @@ function App() {
       setGifs([...gifs, ...res.data]);
       setLoad(true);
      
-      setOffSet(offset+25)
+      setOffSet(offset+10)
      
       
       
@@ -54,10 +54,11 @@ function App() {
       
       console.log(res.data);
       console.log(url);
+      setOffSet(30);
       setGifs([...gifs, ...res.data]);
       setLoad(true);
      
-      setOffSet(offset+25)
+      
      
       
       
@@ -72,6 +73,7 @@ function App() {
   const search = query => {
 
     setGifs([]);
+    setOffSet(30)
     setQuery(query.replace(/\s/g, '+'));
     console.log('g', gifs);
     
@@ -82,6 +84,7 @@ function App() {
       
       console.log(res.data);
       console.log(url);
+      
       setGifs(res.data);
       setLoad(true);
      
